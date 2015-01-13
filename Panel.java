@@ -20,7 +20,7 @@ Sprite particle[] = new Sprite[10];
  double force = .05;
 	public Panel(){
 		//System.out.println("Start");
-		
+
 		for(int i = 0; i<particle.length; i++){
 			if(odd){
 				x = rand.nextInt(900)+50;
@@ -39,14 +39,14 @@ Sprite particle[] = new Sprite[10];
 				odd = true;
 			}
 		}
-		
+
 		gameLoop = new Timer(5, new GameLoop());
 		gameLoop.start();
 	}
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
 		for(int i = 0; i<particle.length; i++){
-		
+
 			particle[i].paint(g, this);
 		}
 	}
@@ -89,20 +89,20 @@ Sprite particle[] = new Sprite[10];
 			}
 		}
 	}
-	
-	
+
+
 	public void Bounce(Sprite partA, Sprite partB){
 		double temp;
-		
-		
+
+
 		/*temp=partA.getXspeed();
 		partA.setXspeed(partB.getXspeed());
 		partB.setXspeed(temp);
-		
+
 		temp=partA.getYspeed();
 		partA.setYspeed(partB.getYspeed());
 		partB.setYspeed(temp);*/
-		
+
 	}
 	public void setColor(Sprite partA, Sprite partB){
 		if(collide){
@@ -114,7 +114,7 @@ Sprite particle[] = new Sprite[10];
 			partB.setColor(Color.BLACK);
 		}
 	}
-	
+
 	public boolean 	doesCollide(Sprite Victim, Sprite Assailant ){
 		//System.out.println("CALCULATE");
 		int x1, y1;
@@ -130,7 +130,7 @@ Sprite particle[] = new Sprite[10];
 		}
 		else
 			return false;
-		
+
 	}
 	public boolean converge(Sprite PartA, Sprite PartB){
 		double x1=PartA.getX();
@@ -161,7 +161,7 @@ Sprite particle[] = new Sprite[10];
 		else
 			return false;
 	}
-	
+
 	class GameLoop implements ActionListener{
 		public void actionPerformed(ActionEvent e){
 			for(int i = 0; i<particle.length; i++){
