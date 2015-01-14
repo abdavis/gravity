@@ -1,4 +1,4 @@
-package andrew;
+//"C:\Program Files (x86)\Java\jdk1.7.0_55\bin"
 import java.awt.Color;
 import java.awt.Graphics;
 
@@ -102,7 +102,6 @@ Sprite particle[] = new Sprite[10];
 		temp=partA.getYspeed();
 		partA.setYspeed(partB.getYspeed());
 		partB.setYspeed(temp);*/
-
 	}
 	public void setColor(Sprite partA, Sprite partB){
 		if(collide){
