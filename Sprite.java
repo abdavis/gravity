@@ -1,4 +1,3 @@
-package andrew;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
@@ -28,7 +27,7 @@ public class Sprite {
 	}
 	public int getY(){
 		return y;
-	}	
+	}
 	public int getWidth(){
 		return width;
 	}
@@ -49,7 +48,7 @@ public class Sprite {
 	public void setColor(Color color){
 		this.color = color;
 	}
-	
+
 	public double getXspeed(){
 		return xspeed;
 	}
@@ -62,7 +61,7 @@ public class Sprite {
 	public void setYspeed(double yvelocity){
 		this.yspeed = yvelocity;
 	}
-	
+
 	public void move(){
 		xspeed+=XDir;
 		yspeed+=YDir;
@@ -70,12 +69,12 @@ public class Sprite {
 		yp += yspeed;
 		XDir=0;
 		YDir=0;
-		
+
 		x = (int)xp;
 		y = (int)yp;
-		
+
 	}
-	
+
 
 	public void paint(Graphics g, JPanel panel){
 		if(image == null){

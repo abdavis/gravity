@@ -1,4 +1,3 @@
-package andrew;
 import java.awt.Color;
 import java.awt.Graphics;
 
