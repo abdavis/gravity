@@ -17,7 +17,7 @@ Sprite particle[] = new Sprite[10];
  Random rand = new Random();
  int x,y;
  double XDir,YDir;
- double force = .05;
+ double force = 5;
 	public Panel(){
 		//System.out.println("Start");
 
@@ -25,8 +25,8 @@ Sprite particle[] = new Sprite[10];
 			if(odd){
 				x = rand.nextInt(900)+50;
 				y = rand.nextInt(900)+50;
-				XDir = /*(rand.nextInt(10)-5)/3.0*/0;
-				YDir = /*(rand.nextInt(10)-5)/3.0*/0;
+				XDir = 0;//(rand.nextInt(10)-5)/5.0;
+				YDir = 0;//(rand.nextInt(10)-5)/5.0;
 				particle[i]= new Sprite(x,y,XDir,YDir);
 				odd = false;
 			}
@@ -60,12 +60,14 @@ Sprite particle[] = new Sprite[10];
 			double yforce=0;
 			for(int n = 0; n<particle.length; n++){
 				if(n!=i){
-					YDist = particle[n].getY() - particle[i].getY();
-					XDist = particle[n].getX() - particle[i].getX();
-					Dist = Math.sqrt(Math.pow(YDist, 2)+(Math.pow(XDist, 2)));
-					force2 = force/(Math.pow(Dist, 1));
-					xforce += force2*XDist/Dist;
-					yforce += force2*YDist/Dist;
+					if(!doesCollide(particle[n],particle[i])){
+            YDist = particle[n].getY() - particle[i].getY();
+  					XDist = particle[n].getX() - particle[i].getX();
+  					Dist = Math.sqrt(Math.pow(YDist, 2)+(Math.pow(XDist, 2)));
+  					force2 = force/(Math.pow(Dist, 2));
+  					xforce += force2*XDist/Dist;
+  					yforce += force2*YDist/Dist;
+          }
 				}
 				particle[i].setXDir(xforce);
 				particle[i].setYDir(yforce);
